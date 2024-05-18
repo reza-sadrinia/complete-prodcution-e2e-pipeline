@@ -13,5 +13,20 @@ pipeline{
                 }
             }
         }
+        stage("checkout from SCM"){
+            steps{
+                git branche: 'main' credentialsId: 'github' , url: 'https://github.com/reza-sadrinia/complete-prodcution-e2e-pipeline.git'
+            }
+        }
+        stage("build") {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+        stage("test") {
+            steps {
+                sh "mvn test"
+            }
+        }
     }
 }
