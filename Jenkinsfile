@@ -56,7 +56,7 @@ pipeline{
                 script {
                     withDockerRegistry(credentialsId: 'docker', url: 'https://reg.tlandino.net') {
                         sh 'docker build -t $IMAGE_NAME .'
-                        sh 'docker push $DOCKER_IMAGE'
+                        sh 'docker push $IMAGE_NAME'
                     }
                 }
             }
