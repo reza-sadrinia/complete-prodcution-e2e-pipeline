@@ -56,7 +56,7 @@ pipeline{
         stage("Build and push"){
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker', url: 'reg.tlandino.net') {
+                    withDockerRegistry(credentialsId: 'docker', url: 'https://reg.tlandino.net') {
                         sh 'docker build -t $IMAGE_NAME .'
                         sh 'docker push $DOCKER_IMAGE'
                     }
