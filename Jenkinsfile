@@ -15,7 +15,7 @@ pipeline{
         }
         stage("checkout from SCM"){
             steps{
-                git branche: 'main' credentialsId: 'github' , url: 'https://github.com/reza-sadrinia/complete-prodcution-e2e-pipeline.git'
+                git branche: 'main', credentialsId: 'github' , url: 'https://github.com/reza-sadrinia/complete-prodcution-e2e-pipeline.git'
             }
         }
         stage("build") {
