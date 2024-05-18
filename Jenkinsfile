@@ -8,9 +8,7 @@ pipeline{
     environment {
         APP_NAME = "Maven-App"
         RELEASE = "1.0.0"
-        // DOCKER_REGISTRY = "reg.tlandino.net"
-        // DOCKER_USER = "docker"
-        // DOCKER_PASS = "tetherland"
+        DOCKER_REGISTRY = "reg.tlandino.net"
         IMAGE_NAME = "${DOCKER_REGISTRY}/${APP_NAME}:${RELEASE}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
     }
