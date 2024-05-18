@@ -8,9 +8,9 @@ pipeline{
     environment {
         APP_NAME = "Maven-App"
         RELEASE = "1.0.0"
-        DOCKER_REGISTRY = "reg.tlandino.net"
-        DOCKER_USER = "docker"
-        DOCKER_PASS = "tetherland"
+        // DOCKER_REGISTRY = "reg.tlandino.net"
+        // DOCKER_USER = "docker"
+        // DOCKER_PASS = "tetherland"
         IMAGE_NAME = "${DOCKER_REGISTRY}/${APP_NAME}:${RELEASE}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
     }
@@ -50,6 +50,16 @@ pipeline{
             steps{
                 script{
                     waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
+                }
+            }
+        }
+        stage("Build and push"){
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker', url: 'reg.tlandino.net') {
+                        sh 'docker build -t $IMAGE_NAME .'
+                        sh 'docker push $DOCKER_IMAGE'
+                    }
                 }
             }
         }
