@@ -6,7 +6,7 @@ pipeline{
         maven 'Maven3'
     }
     environment {
-        APP_NAME = "Maven-App"
+        APP_NAME = "maven-app"
         RELEASE = "1.0.0"
         DOCKER_REGISTRY = "reg.tlandino.net"
         IMAGE_NAME = "${DOCKER_REGISTRY}/${APP_NAME}:${RELEASE}"
