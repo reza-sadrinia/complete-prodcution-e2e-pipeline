@@ -12,8 +12,8 @@ spec:
       labels:
         app: gitops-maven
     spec: 
-      imagePullSecrets:
-        - name: my-registry-secret
+      # imagePullSecrets:
+      #   - name: my-registry-secret
       containers:
         - name: maven-app
           image: reg.tlandino.net/maven-app:1.0.0
