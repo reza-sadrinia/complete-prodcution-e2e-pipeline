@@ -16,7 +16,7 @@ spec:
       #   - name: my-registry-secret
       containers:
         - name: maven-app
-          image: reg.tlandino.net/maven-app:1.0.0
+          image: reg.tlandino.net/maven-app/maven-app:1.0.0
           resources:
             limits:
               memory: "256Mi"
