@@ -9,7 +9,7 @@ pipeline{
         APP_NAME = "maven-app"
         RELEASE = "1.0.0"
         DOCKER_REGISTRY = "reg.tlandino.net"
-        IMAGE_NAME = "${DOCKER_REGISTRY}/${APP_NAME}:${RELEASE}"
+        IMAGE_NAME = "${DOCKER_REGISTRY}/${APP_NAME}/${APP_NAME}:${RELEASE}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
     }
     stages{
